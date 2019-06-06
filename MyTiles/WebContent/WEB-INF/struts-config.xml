@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<action-mappings>
+
+		<action path="/TilesHome" parameter="parameter"
+			type="mytiles.action.TilesHomeAction">
+
+			<forward name="friends" path="/friends.jsp" />
+			<forward name="office" path="office.jsp" />
+		</action>
+	</action-mappings>
+
+
+
+		<plug-in className="org.apache.struts.tiles.TilesPlugin">
+			<set-property property="definitions-config"
+				value="/WEB-INF/tiles-defs.xml" />
+			<set-property property="moduleAware" value="true" />
+		</plug-in>
+</struts-config>

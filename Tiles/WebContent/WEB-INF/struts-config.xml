@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+
+<struts-config>
+
+	<form-beans>
+		
+	</form-beans>
+
+
+
+	<global-exceptions>
+
+	</global-exceptions>
+
+	<global-forwards>
+		<forward name="welcome" path="/Welcome.do" />
+	</global-forwards>
+
+	<action-mappings>
+
+		<action path="/Link" parameter="parameter"
+			type="tiles.action.LinkAction">
+
+			<forward name="friends" path="/friends.jsp" />
+			<forward name="office" path="office.jsp" />
+		</action>
+
+
+		<!-- <action path="/Link" parameter="parameter" type="tiles.action.LinkAction" 
+			name="DispatchActionForm" input="/menu.jsp" scope="request" validate="false"> 
+			<forward name="friends" path="/friends.jsp" /> <forward name="office" path="/office.jsp" 
+			/> </action> -->
+		<action path="/Welcome" forward="/welcomeStruts.jsp" />
+
+
+	</action-mappings>
+	<!-- <controller
+		processorClass="org.apache.struts.tiles.TilesRequestProcessor" />
+	<message-resources
+		parameter="tiles/action/ApplicationResource" />
+ -->
+	<!-- Tiles plug in -->
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config"
+			value="/WEB-INF/tiles-defs.xml" />
+		<set-property property="moduleAware" value="true" />
+	</plug-in>
+
+
+</struts-config>

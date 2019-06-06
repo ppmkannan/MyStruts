@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+<struts-config>
+	<form-beans>
+		<form-bean name="UploadForm"
+			type="imageupload.form.UploadForm" />
+		
+	</form-beans>
+
+
+	<global-exceptions></global-exceptions>
+	<global-forwards>
+		
+	</global-forwards>
+
+
+	<action-mappings>		
+
+		<action input="/upload.jsp" name="UploadForm" path="/Upload"
+			scope="request" type="imageupload.action.UploadAction">
+			<forward name="success" path="/success.jsp" />
+			<forward name="failure" path="/failure.jsp" />
+		</action>
+		
+		<action input="/getimages.jsp" name="UploadForm" path="/GetImages"
+			scope="session" type="imageupload.action.GetAction">
+			<forward name="success" path="/success.jsp" />
+			<forward name="failure" path="/failure.jsp" />
+		</action>
+		
+		
+
+	</action-mappings>
+	<message-resources parameter="mystruts/resources/ApplicationResource" />
+</struts-config>
