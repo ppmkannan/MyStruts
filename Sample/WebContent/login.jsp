@@ -14,12 +14,18 @@
 <body>
 	login
 	<html:form action="/Login" method="get">
-User Name : <html:text name="LoginForm" property="username" />
+User Name : <html:text name="LoginSampleForm" property="username" value="enter username"/>
 		<br>
-Password  : <html:password name="LoginForm" property="password" />
+Password  : <html:password name="LoginSampleForm" property="password" value="enter passoword" />
 		<br>
 
 		<html:submit value="Login" />
 	</html:form>
+	
+<script type="text/javascript">
+console.log("zoho");
+document.form[0].
+
+</script>
 </body>
 </html>

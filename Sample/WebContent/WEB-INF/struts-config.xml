@@ -6,8 +6,8 @@
 	<form-beans>
 		
 			
-		<form-bean name="LoginForm"
-			type="mystruts.form.LoginForm" />
+		<form-bean name="LoginSampleForm"
+			type="com.sample.form.LoginSampleForm" />
 	</form-beans>
 
 
@@ -21,8 +21,8 @@
 		<action path="/myStart" forward="/start.jsp" />
 		
 
-		<action path="/Login" input="/login.jsp" name="LoginForm" 
-			scope="session" type="com.sample.action.DisSampleAction">
+		<action path="/Login" input="/login.jsp" name="LoginSampleForm" 
+			scope="session" type="com.sample.action.LoginSampleAction">
 			<forward name="success" path="/success.jsp" />
 			<forward name="failure" path="/failure.jsp" />
 		</action>
